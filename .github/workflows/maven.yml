@@ -34,16 +34,12 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        key: ${{ runner.os }}-maven-${{ hashFiles('SpringBoot/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
 
     - name: List directory
-      run: ls -la
-
-    - name: List subdirectories
-      run: |
-        find . -type d -print
+      run: ls -la SpringBoot
 
     - name: Build with Maven
-      run: mvn -B package --file /home/runner/work/SpringBoot/SpringBoot/pom.xml
+      run: mvn -B package --file SpringBoot/pom.xml
