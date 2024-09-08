@@ -30,12 +30,12 @@ jobs:
       with:
         java-version: '17' # Specify the version of Java to use
 
+    - name: check Maven Version
+      run: mvn --version
+      
     - name: Build with Maven
-      run: mvn clean install --fail-never
-
-    - name: Run tests
-      run: mvn test
-
+      run: mvn -f SpringBoot/pom.xml clean install
+      
     - name: Package application
       run: mvn package
 
