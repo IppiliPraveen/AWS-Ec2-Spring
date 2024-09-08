@@ -46,4 +46,4 @@ jobs:
         find . -type d -print
 
     - name: Build with Maven
-      run: mvn -B package --file SpringBoot/pom.xml
+      run: mvn -B package --file /home/runner/work/SpringBoot/SpringBoot/pom.xml
