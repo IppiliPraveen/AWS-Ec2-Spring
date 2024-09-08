@@ -14,11 +14,10 @@ public interface EmployRepo extends JpaRepository<Employ, String>{
 	
 	public List<Employ> findByEmpNo(String empNo);
 	
-	@Query(value="SELECT COUNT(empNo) FROM Employ",nativeQuery = true)
+	@Query(value="SELECT COUNT(empNo) FROM Employ")
 	public int genarateEmpID();
 
-	@Query(value="insert into Employ (empNo,name, gender, dept, desig, salary, status) values (:empNo,:name,:gender,:dept,:desig,:salary,'a')"
-			,nativeQuery = true)
+	@Query(value="insert into Employ (empNo,name, gender, dept, desig, salary, status) values (:empNo,:name,:gender,:dept,:desig,:salary,'a')")
 	public void AddEmploy(String empNo, String name, Gender gender, String dept, String desig, Long salary);
 	
 	public Employ getByEmpNo(String empNo);
