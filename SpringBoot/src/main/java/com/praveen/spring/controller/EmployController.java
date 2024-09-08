@@ -69,13 +69,6 @@ public class EmployController {
 		return "index";
 	}
 	
-	@GetMapping("SpringBoot/")
-	public String indexPage() {
-		LOG.info("------------------> Spring Boot Started");
-		return "index";
-	}
-	
-	
 
 	@GetMapping(value = "/login")
 	public String login(Model model) {
