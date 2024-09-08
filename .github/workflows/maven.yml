@@ -38,7 +38,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
-    - name: List directory
+    - name: List root directory
+      run: ls -la
+
+    - name: List SpringBoot directory
       run: ls -la SpringBoot
 
     - name: Build with Maven
