@@ -50,7 +50,7 @@ public class EmployService {
 	}
 
 	public List<Employ> searchEmploy(String empNo) {//Employ or  List<Employ>
-		// TODO Auto-generated method stub
+		
 		List<Employ> employList=employRepo.findByEmpNo(empNo);
 //		Employ employ=employRepo.findByEmpNo(empNo).get(0);
 //		LOG.info("62 -> "+employ.getName());
