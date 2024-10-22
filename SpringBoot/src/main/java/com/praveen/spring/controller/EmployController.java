@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ import com.praveen.spring.service.LogInService;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 public class EmployController {
 	
 	@Autowired
@@ -36,6 +38,23 @@ public class EmployController {
 	public List<Employ> employList() {
 		List<Employ> empList = employService.getActiveEmploy();
 		return empList;
+	}
+	
+	@ResponseBody
+	@PostMapping("/empLogin")
+	public boolean getLogIn(@RequestBody LogIn login) {
+		return logInService.login(login.getUserName(), login.getPassword());
+	}
+	
+	@ResponseBody
+	@PostMapping("/empRigister")
+	public boolean empRegister(@RequestBody LogIn login) {
+		boolean isSaved = false;
+		if(!logInService.login(login.getUserName(), login.getPassword())) {
+			logInService.saveUser(login);
+			isSaved = true;
+		}
+		return isSaved;
 	}
 	
 	@ResponseBody
