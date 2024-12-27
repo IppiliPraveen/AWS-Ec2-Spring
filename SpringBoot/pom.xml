@@ -8,7 +8,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.3</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
     </parent>
     
 	<groupId>com.praveen.springBoot</groupId>
@@ -19,7 +19,7 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<lombok.version>1.18.34</lombok.version>
+		<lombok.version>1.18.36</lombok.version>
 		<log4j.version>1.2.17</log4j.version>  
 		<junit.version>5.8.0</junit.version>
 		<servlet.version>4.0.1</servlet.version>
